@@ -1,0 +1,225 @@
+.elementor-16334 .elementor-element.elementor-element-3e4d40e{--display:flex;}.elementor-widget-text-editor{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );color:var( --e-global-color-text );}.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:var( --e-global-color-primary );}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap, .elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap{color:var( --e-global-color-primary );border-color:var( --e-global-color-primary );}/* Start custom CSS for text-editor, class: .elementor-element-3cfc3a0 */.mentorship-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4a9fd8, #6bb6ff);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            margin-top: 15px;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .mentor-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mentor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a9fd8, #6bb6ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .mentor-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mentor-header {
+            text-align: center;
+        }
+
+        .mentor-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            border: 4px solid #e8f4f8;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .mentor-card:hover .mentor-image {
+            border-color: #4a9fd8;
+            transform: scale(1.05);
+        }
+
+        .mentor-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #4a9fd8;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: '▶';
+            position: absolute;
+            left: 10px;
+            transition: transform 0.3s ease;
+            color: #4a9fd8;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            background-color: #f0f8ff;
+            color: #2c5aa0;
+        }
+
+        .mentor-bio {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border-left: 3px solid #4a9fd8;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mentor-bio p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .mentor-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .mentors-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .mentor-card {
+                padding: 25px;
+            }
+
+            .mentor-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mentors-grid {
+                grid-template-columns: 1fr;
+            }
+        }/* End custom CSS */
