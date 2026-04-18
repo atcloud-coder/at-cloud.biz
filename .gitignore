@@ -20,3 +20,7 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# Static site mirror (~50MB+). Remove this line if you want the folder visible in
+# Cursor/VS Code without changing settings (see README).
+# design/

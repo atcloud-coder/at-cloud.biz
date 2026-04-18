@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMBA Program — At Cloud</title>
+  <meta name="description" content="Welcome to the Cloud EMBA Mentor Circle — a mentorship initiative by @Cloud Marketplace Ministry.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .emba-hero {
+      position: relative;
+      color: #fff;
+      padding: 7rem 0 6rem;
+      text-align: center;
+      background-color: #0e1018;
+      background-image: url("assets/images/banner-life-2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .emba-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .emba-hero .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+    .emba-hero .eyebrow {
+      font-family: "Roboto", var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 1rem;
+    }
+    .emba-hero h1 {
+      font-family: "Roboto", var(--font-body);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 1.5rem;
+      color: #fff;
+    }
+    .emba-hero p.lede {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.7;
+      margin: 0 auto 2.25rem;
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    .emba-hero .register-btn {
+      display: inline-block;
+      background: #283ad6;
+      color: #fff;
+      font-family: "Roboto", var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 500;
+      padding: 0.85em 1.75em;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .emba-hero .register-btn:hover {
+      background: #1b2cb3;
+      transform: translateY(-2px);
+    }
+    .emba-hero .note {
+      margin: 1.75rem auto 0;
+      max-width: 560px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #c00;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/images/logo.svg" width="180" height="48" alt="At Cloud"></a>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li class="nav-item--dropdown">
+            <a href="about.html" class="nav-parent">About <span class="nav-chevron" aria-hidden="true"></span></a>
+            <ul class="nav-sub" role="list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="leadership.html">Leadership Team</a></li>
+              <li><a href="mentors.html">Mentors</a></li>
+            </ul>
+          </li>
+          <li><a href="emba.html" aria-current="page">EMBA Program</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li class="nav-cta"><a href="donation.html">Donation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="emba-hero">
+      <div class="container">
+        <p class="eyebrow">Empowering Your Journey</p>
+        <h1>Welcome to the Cloud EMBA Mentor Circle</h1>
+        <p class="lede">A mentorship initiative by Cloud Marketplace Ministry designed to equip business leaders and entrepreneurs to create lasting change in the marketplace while honoring God.</p>
+        <p><a class="register-btn" href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs" target="_blank" rel="noopener noreferrer">Register for EMBA Programs</a></p>
+        <p class="note">If you’re new to @Cloud or have not already created an account in our ERP system, please take a few minutes first to sign up for an account.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>GET IN TOUCH</h4>
+        <p><span class="footer-icon footer-icon--phone" aria-hidden="true"></span><a href="tel:1-408-320-5526">1-408-320-5526</a></p>
+        <p><span class="footer-icon footer-icon--mail" aria-hidden="true"></span><a href="mailto:operationatcloud@gmail.com">operationatcloud@gmail.com</a></p>
+        <p><span class="footer-icon footer-icon--map" aria-hidden="true"></span>2586 Seaboard Ave, San Jose, California 95131</p>
+      </div>
+      <div class="footer-col">
+        <h4>Social Links</h4>
+        <ul class="footer-social footer-social--icons">
+          <li><a class="social-link social-link--facebook" href="https://www.facebook.com/atcloudmarketplaceministry" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span></a></li>
+          <li><a class="social-link social-link--linkedin" href="https://www.linkedin.com/company/at-cloud-marketplace-ministry/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span aria-hidden="true">in</span></a></li>
+          <li><a class="social-link social-link--youtube" href="https://www.youtube.com/channel/UC8JZD7Ufbb9O4vvZ9B3I1Uw" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><span aria-hidden="true">▶</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletters</h4>
+        <p class="newsletter-note">Subscribe to get updates right in your inbox. We promise to not send you spams.</p>
+        <form class="newsletter-form" data-newsletter-form action="mailto:operationatcloud@gmail.com" method="post" novalidate>
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input class="newsletter-input" id="newsletter-email" type="email" name="EMAIL" placeholder="Enter your email" required>
+          <button class="newsletter-submit" type="submit" aria-label="Subscribe"></button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p>@Cloud Marketplace Ministry | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

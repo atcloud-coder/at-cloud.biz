@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — At Cloud</title>
+  <meta name="description" content="Contact @Cloud Marketplace Ministry.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/images/logo.svg" width="180" height="48" alt="At Cloud"></a>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li class="nav-item--dropdown">
+            <a href="about.html" class="nav-parent">About <span class="nav-chevron" aria-hidden="true"></span></a>
+            <ul class="nav-sub" role="list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="leadership.html">Leadership Team</a></li>
+              <li><a href="mentors.html">Mentors</a></li>
+            </ul>
+          </li>
+          <li><a href="emba.html">EMBA Program</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li class="nav-cta"><a href="donation.html">Donation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-scoped page-contact">
+    <div class="contact-container">
+      <div class="page-header">
+        <h1>Contact</h1>
+        <p>We'd love to hear from you. Reach out and we will get back to you as soon as possible.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <section class="contact-card">
+          <h2 class="contact-heading">YOU'RE MY EVERYTHING</h2>
+          <p class="contact-sub">I'm not sure about it, but I'm glad to have you around.</p>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9742;</div>
+            <div class="contact-info-text">
+              <h3>Phone</h3>
+              <p><a href="tel:1-408-320-5526">1-408-320-5526</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9993;</div>
+            <div class="contact-info-text">
+              <h3>Email</h3>
+              <p><a href="mailto:operationatcloud@gmail.com">operationatcloud@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9873;</div>
+            <div class="contact-info-text">
+              <h3>Address</h3>
+              <p>2586 Seaboard Ave, San Jose, California 95131</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-card">
+          <h2 class="contact-heading">SAY OH YEAH!</h2>
+          <p class="contact-sub">Your email address will not be published. Required fields are marked.</p>
+
+          <form class="contact-form" data-contact-form action="mailto:operationatcloud@gmail.com" method="post" enctype="text/plain" novalidate>
+            <div class="field">
+              <label for="contact-name">Your name</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="contact-email">Your email</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" required>
+            </div>
+            <div class="field">
+              <label for="contact-message">Your message (optional)</label>
+              <textarea id="contact-message" name="message" rows="6"></textarea>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=2586%20Seaboard%20Ave%20San%20Jose%2C%20California%2095131&t=m&z=12&output=embed&iwloc=near"
+        title="2586 Seaboard Ave San Jose, California 95131"
+        aria-label="2586 Seaboard Ave San Jose, California 95131"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>GET IN TOUCH</h4>
+        <p><span class="footer-icon footer-icon--phone" aria-hidden="true"></span><a href="tel:1-408-320-5526">1-408-320-5526</a></p>
+        <p><span class="footer-icon footer-icon--mail" aria-hidden="true"></span><a href="mailto:operationatcloud@gmail.com">operationatcloud@gmail.com</a></p>
+        <p><span class="footer-icon footer-icon--map" aria-hidden="true"></span>2586 Seaboard Ave, San Jose, California 95131</p>
+      </div>
+      <div class="footer-col">
+        <h4>Social Links</h4>
+        <ul class="footer-social footer-social--icons">
+          <li><a class="social-link social-link--facebook" href="https://www.facebook.com/atcloudmarketplaceministry" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span></a></li>
+          <li><a class="social-link social-link--linkedin" href="https://www.linkedin.com/company/at-cloud-marketplace-ministry/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span aria-hidden="true">in</span></a></li>
+          <li><a class="social-link social-link--youtube" href="https://www.youtube.com/channel/UC8JZD7Ufbb9O4vvZ9B3I1Uw" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><span aria-hidden="true">▶</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletters</h4>
+        <p class="newsletter-note">Subscribe to get updates right in your inbox. We promise to not send you spams.</p>
+        <form class="newsletter-form" data-newsletter-form action="mailto:operationatcloud@gmail.com" method="post" novalidate>
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input class="newsletter-input" id="newsletter-email" type="email" name="EMAIL" placeholder="Enter your email" required>
+          <button class="newsletter-submit" type="submit" aria-label="Subscribe"></button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p>@Cloud Marketplace Ministry | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
