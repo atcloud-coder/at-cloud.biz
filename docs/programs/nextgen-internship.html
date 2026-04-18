@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@Cloud NextGen — Internship Track</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+ --navy:   #0A1628;
+ --blue:   #1A6FBF;
+ --teal:   #0D9D98;
+ --teal2:  #0B8580;
+ --gold:   #C9A84C;
+ --white:  #FFFFFF;
+ --off:    #F6F8FC;
+ --muted:  #6B7B8E;
+ --border: #DDE4ED;
+ --light:  #EBF8F7;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden;line-height:1.6;}
+ 
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:100;height:66px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-pill{background:var(--teal);border-radius:7px;padding:4px 11px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#fff;}
+.logo-text{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff;}
+.logo-text em{font-style:normal;color:var(--teal);}
+.nav-tag{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);border-bottom:2px solid var(--teal);padding-bottom:2px;}
+.nav-apply{background:var(--gold);color:var(--navy);padding:10px 22px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s;font-family:'Syne',sans-serif;}
+.nav-apply:hover{background:#d4b55a;transform:translateY(-1px);}
+.nav-end{display:flex;align-items:center;gap:18px;}
+.nav-main-site{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.45);text-decoration:none;}
+.nav-main-site:hover{color:rgba(255,255,255,.88);}
+ 
+/* ── HERO ── */
+.hero{min-height:100vh;padding-top:66px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 85% 50%,rgba(13,157,152,.2) 0%,transparent 58%),radial-gradient(ellipse 45% 55% at 8% 80%,rgba(26,111,191,.14) 0%,transparent 50%);}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:30px 30px;}
+.hero-content{position:relative;z-index:2;padding:0 6%;max-width:800px;animation:fadeUp .8s ease both;}
+ 
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(13,157,152,.15);border:1px solid rgba(13,157,152,.3);border-radius:100px;padding:6px 16px;margin-bottom:28px;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;}
+.hero-eyebrow::before{content:'⬡';font-size:10px;}
+ 
+/* Bachelor badge */
+.degree-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:7px 16px;margin-bottom:20px;font-size:13px;font-weight:600;color:var(--gold);}
+ 
+h1{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,78px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:22px;}
+h1 span{color:var(--teal);}
+.hero-desc{font-size:18px;color:rgba(255,255,255,.55);line-height:1.78;max-width:580px;margin-bottom:40px;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.btn-primary{background:var(--teal);color:#fff;padding:16px 34px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .22s;display:inline-block;}
+.btn-primary:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,157,152,.4);}
+.btn-outline{background:transparent;color:#fff;padding:16px 34px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid rgba(255,255,255,.22);cursor:pointer;transition:all .22s;display:inline-block;}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,.5);}
+.pill strong{color:rgba(255,255,255,.82);font-weight:600;}
+ 
+/* ── SHARED SECTION STYLES ── */
+section{padding:88px 6%;}
+.s-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:14px;}
+.s-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:52px;}
+ 
+/* ── WHY NOW — AI CRISIS ── */
+.why-now{background:var(--navy);padding:88px 6%;position:relative;overflow:hidden;}
+.why-now::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 80% 50%,rgba(13,157,152,.12) 0%,transparent 55%);}
+.why-now-inner{position:relative;z-index:2;}
+.why-now .s-label{color:rgba(255,100,100,.8);}
+.why-now .s-title{color:#fff;}
+.why-now .s-sub{color:rgba(255,255,255,.45);}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:44px;}
+.news-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px 24px;}
+.news-source{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.news-card h4{font-size:14px;font-weight:600;color:#fff;line-height:1.45;margin-bottom:8px;}
+.news-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
+.crisis-banner{background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.25);border-radius:10px;padding:18px 24px;margin-bottom:40px;display:flex;align-items:center;gap:12px;}
+.crisis-banner p{font-size:14px;color:rgba(255,200,200,.85);font-weight:500;line-height:1.6;}
+.needs-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.need-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:12px;padding:22px;}
+.need-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.need-item h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+.need-item p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
+ 
+/* ── PATHWAY ── */
+.pathway-section{background:var(--off);}
+.pathway-row{display:flex;align-items:center;gap:0;margin-top:0;}
+.path-step{flex:1;background:var(--white);border-radius:14px;border:1px solid var(--border);padding:32px 24px;text-align:center;position:relative;transition:all .25s;}
+.path-step:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+.path-step.highlight{background:var(--navy);border-color:var(--teal);}
+.path-arrow{font-size:22px;color:var(--muted);padding:0 12px;flex-shrink:0;}
+.path-level{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.path-step .path-level{color:var(--muted);}
+.path-step.highlight .path-level{color:var(--teal);}
+.path-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.path-step.highlight .path-name{color:#fff;}
+.path-degree{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.bachelor{background:rgba(13,157,152,.12);color:var(--teal);}
+.masters{background:rgba(26,111,191,.12);color:var(--blue);}
+.phd{background:rgba(201,168,76,.12);color:var(--gold);}
+.path-step.highlight .bachelor{background:rgba(13,157,152,.2);color:var(--teal);}
+.path-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.path-step.highlight .path-desc{color:rgba(255,255,255,.5);}
+.path-synergy{background:rgba(13,157,152,.06);border:1px solid rgba(13,157,152,.2);border-radius:14px;padding:28px 32px;margin-top:32px;}
+.path-synergy h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+.synergy-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.syn-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy);}
+.syn-item::before{content:'→';color:var(--teal);font-weight:700;flex-shrink:0;}
+ 
+/* ── WHY THIS INTERNSHIP ── */
+.why-section{background:var(--white);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.why-card{background:var(--off);border-radius:14px;border:1px solid var(--border);padding:32px 26px;transition:all .25s;}
+.why-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 14px 40px rgba(13,157,152,.1);}
+.why-icon{font-size:26px;margin-bottom:16px;}
+.why-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:9px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.7;}
+ 
+/* ── PROJECTS ── */
+.projects-section{background:var(--off);}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.project-card{border-radius:16px;border:1px solid var(--border);overflow:hidden;transition:all .25s;background:var(--white);}
+.project-card:hover{box-shadow:0 14px 44px rgba(0,0,0,.09);transform:translateY(-4px);}
+.project-header{background:var(--navy);padding:26px 30px;position:relative;overflow:hidden;}
+.project-header::after{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:var(--teal);opacity:.1;filter:blur(28px);}
+.phase-badge{display:inline-block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:rgba(13,157,152,.15);border:1px solid rgba(13,157,152,.25);border-radius:100px;padding:3px 11px;margin-bottom:10px;}
+.phase-badge.p2{color:var(--gold);background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.25);}
+.project-header h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;line-height:1.25;}
+.project-body{padding:26px 30px;}
+.p-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border);}
+.p-item:last-child{border-bottom:none;padding-bottom:0;}
+.p-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px;}
+.p-dot.gold{background:var(--gold);}
+.p-title{font-size:14px;font-weight:500;color:var(--navy);line-height:1.45;}
+.p-sub{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.mentor-tag{display:inline-block;background:rgba(13,157,152,.1);color:var(--teal2);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:4px;}
+.project-card.full{grid-column:1/-1;}
+.full-inner{display:grid;grid-template-columns:1fr 1fr;}
+.ai-vision{background:rgba(26,111,191,.05);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;}
+.ai-vision p{font-size:13px;color:var(--navy);line-height:1.65;}
+.ai-vision strong{color:var(--blue);}
+.future-note{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:14px 18px;margin-top:10px;font-size:13px;color:var(--navy);line-height:1.6;}
+.future-note strong{color:var(--gold);}
+ 
+/* ── WHAT YOU GAIN ── */
+.gain-section{background:var(--navy);position:relative;overflow:hidden;}
+.gain-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 80% 50%,rgba(13,157,152,.14) 0%,transparent 55%);}
+.gain-inner{position:relative;z-index:2;}
+.gain-section .s-label{color:rgba(13,157,152,.9);}
+.gain-section .s-title{color:#fff;}
+.gain-section .s-sub{color:rgba(255,255,255,.42);}
+.gain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.gain-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:30px 22px;transition:all .25s;}
+.gain-card:hover{background:rgba(255,255,255,.08);border-color:rgba(13,157,152,.3);}
+.gain-icon{font-size:26px;margin-bottom:12px;}
+.gain-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:7px;}
+.gain-card p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65;}
+ 
+/* ── TIMELINE ── */
+.timeline-section{background:var(--off);}
+.timeline{display:flex;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.tl-step{flex:1;padding:26px 20px;border-right:1px solid var(--border);background:var(--white);transition:background .2s;}
+.tl-step:last-child{border-right:none;}
+.tl-step:hover{background:var(--light);}
+.tl-step.active-tl{background:var(--navy);}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--border);margin-bottom:12px;}
+.tl-step.active-tl .tl-dot{background:var(--teal);}
+.tl-month{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+.tl-label{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.tl-step.active-tl .tl-label{color:#fff;}
+.tl-desc{font-size:12px;color:var(--muted);line-height:1.55;}
+.tl-step.active-tl .tl-desc{color:rgba(255,255,255,.45);}
+ 
+/* ── MENTORS ── */
+.mentors-section{background:var(--white);}
+.mentors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mentor-card{background:var(--off);border-radius:14px;border:1px solid var(--border);padding:28px 22px;text-align:center;transition:all .25s;}
+.mentor-card:hover{border-color:var(--teal);transform:translateY(-3px);}
+.m-avatar{width:56px;height:56px;border-radius:50%;background:var(--navy);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--teal);}
+.m-role{display:inline-block;background:rgba(13,157,152,.1);color:var(--teal2);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;}
+.mentor-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.mentor-card p{font-size:12px;color:var(--muted);line-height:1.6;}
+ 
+/* ── CTA ── */
+.cta-section{background:var(--off);text-align:center;padding:100px 6%;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(13,157,152,.1) 0%,transparent 60%);}
+.cta-inner{position:relative;z-index:2;}
+.cta-section .s-label{color:var(--teal2);}
+.cta-section .s-title{margin:0 auto 14px;}
+.cta-section .s-sub{margin:0 auto 40px;text-align:center;}
+.cta-note{font-size:13px;color:var(--muted);margin-top:18px;}
+.cta-note a{color:var(--teal);text-decoration:none;font-weight:500;}
+ 
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:30px 6%;display:flex;align-items:center;justify-content:space-between;}
+footer p{font-size:13px;color:rgba(255,255,255,.25);}
+ 
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+ <div class="logo">
+   <div class="logo-pill">@Cloud</div>
+   <span class="logo-text">Next<em>Gen</em></span>
+ </div>
+ <div class="nav-tag">Internship Track</div>
+ <div class="nav-end">
+   <a href="../index.html" class="nav-main-site">Main site</a>
+   <a href="https://at-cloud.biz/?fbclid=IwY2xjawQoSgFleHRuA2FlbQIxMABicmlkETFrVXA3VmpaZEwwRjA4Vnp4c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsbACUjZ58GesAr2mQImMK-B7J0-vkPt2esAk9OEj3hgYKYEoMIOhh1a0dAA_aem_ah1d9o0ueaFLhNyAsJYnZA" class="nav-apply">Apply Now</a>
+ </div>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-glow"></div>
+ <div class="hero-dots"></div>
+ <div class="hero-content">
+   <div class="hero-eyebrow">@Cloud NextGen · Internship Track</div>
+   <div class="degree-badge">🎓 "Bachelors" Program · New Grads & Young Professionals</div>
+   <h1>Build Real Things.<br><span>Make Real Impact.</span></h1>
+   <p class="hero-desc">AI is disrupting entry-level jobs. The best response? Build a portfolio of real, shipped work. Gain hands-on experience contributing to live @Cloud tech, data, and media projects — and grow as a Kingdom-minded professional.</p>
+   <div class="hero-ctas">
+     <a href="https://at-cloud.biz/?fbclid=IwY2xjawQoSgFleHRuA2FlbQIxMABicmlkETFrVXA3VmpaZEwwRjA4Vnp4c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsbACUjZ58GesAr2mQImMK-B7J0-vkPt2esAk9OEj3hgYKYEoMIOhh1a0dAA_aem_ah1d9o0ueaFLhNyAsJYnZA" class="btn-primary">Apply Now — Free</a>
+     <a href="#projects" class="btn-outline">See the Projects</a>
+   </div>
+   <div class="hero-pills">
+     <span class="pill"><strong>Volunteer</strong> · Portfolio-building</span>
+     <span class="pill"><strong>Mentors:</strong> Ray · Jamie · David</span>
+     <span class="pill"><strong>Launch:</strong> May 2026</span>
+     <span class="pill"><strong>Term length:</strong> 2–3 months</span>
+   </div>
+ </div>
+</section>
+ 
+<!-- WHY NOW — AI CRISIS -->
+<section class="why-now">
+ <div class="why-now-inner">
+   <div class="s-label">Why This Matters Now</div>
+   <h2 class="s-title" style="color:#fff;">AI Is Replacing Entry-Level Jobs.<br>You Need Real Experience to Stand Out.</h2>
+   <p class="s-sub">The job market for new graduates has shifted dramatically. Here's what the data says:</p>
+ 
+   <div class="news-grid">
+     <div class="news-card">
+       <div class="news-source">New York Times · Oct 2025</div>
+       <h4>"For Some Recent Graduates, the A.I. Job Apocalypse May Already Be Here"</h4>
+       <p>Rising unemployment among recent grads as companies replace entry-level roles with AI systems.</p>
+     </div>
+     <div class="news-card">
+       <div class="news-source">Forbes · Aug 12, 2025</div>
+       <h4>"AI and the Vanishing Entry-Level Job: The Changing Future of Work"</h4>
+       <p>New grad hiring dropped 50% in 2024, partly due to AI replacing entry-level tasks.</p>
+     </div>
+     <div class="news-card">
+       <div class="news-source">CNN · Aug 4, 2025</div>
+       <h4>"College Grads Compete with AI for Entry-Level Jobs"</h4>
+       <p>AI is directly competing with graduates for entry-level positions, making the job market tougher than ever.</p>
+     </div>
+     <div class="news-card">
+       <div class="news-source">Forbes · Aug 28, 2025</div>
+       <h4>"Stanford Study Warns: AI Is Already Costing Young Workers 13% of Their Jobs"</h4>
+       <p>A Stanford study finds a 13% decline in jobs for young workers in roles susceptible to automation since late 2022.</p>
+     </div>
+   </div>
+ 
+   <div class="crisis-banner">
+     <span style="font-size:22px;">⚡</span>
+     <p>Job hunting is harder. AI is displacing entry-level roles. The graduates who will succeed are the ones who can point to <strong>real projects they shipped</strong> — not just a degree.</p>
+   </div>
+ 
+   <div class="needs-row">
+     <div class="need-item">
+       <div class="need-icon">🧭</div>
+       <div>
+         <h4>Career Clarity & Guidance</h4>
+         <p>Understanding career paths, growth opportunities, and how to align your skills with what the market actually needs in an AI-driven world.</p>
+       </div>
+     </div>
+     <div class="need-item">
+       <div class="need-icon">🤝</div>
+       <div>
+         <h4>Mentorship & Real Networking</h4>
+         <p>Access to experienced professionals who can help you navigate the workplace, build relationships with managers and peers, and open doors through referrals.</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+ 
+<!-- WHY THIS INTERNSHIP -->
+<section class="why-section">
+ <div class="s-label">Why NextGen Internship</div>
+ <h2 class="s-title">More Than a Side Project</h2>
+ <p class="s-sub">You're not simulating work — you're shipping real deliverables that serve a real ministry and real people.</p>
+ <div class="why-grid">
+   <div class="why-card">
+     <div class="why-icon">💼</div>
+     <h3>Interview-Ready Portfolio</h3>
+     <p>Real deliverables you can talk about in interviews — dashboards, pipelines, media content, and AI tools that are actually live and in use.</p>
+   </div>
+   <div class="why-card">
+     <div class="why-icon">🤝</div>
+     <h3>Team Collaboration Skills</h3>
+     <p>Structured team cadence with regular check-ins. Learn to communicate, stay accountable, divide work, and present your results — just like a real job.</p>
+   </div>
+   <div class="why-card">
+     <div class="why-icon">🧠</div>
+     <h3>Two-Way Learning</h3>
+     <p>Our mentors learn from your fresh perspective on AI trends and modern tools just as much as you learn from their experience. Everyone grows.</p>
+   </div>
+   <div class="why-card">
+     <div class="why-icon">🚀</div>
+     <h3>Explore AI & Emerging Tech</h3>
+     <p>Phase 2 opens doors into Agentic AI development. Build chatbots, AI career coaches, and eventually an AI Avatar for EMBA mentors. Get in early.</p>
+   </div>
+   <div class="why-card">
+     <div class="why-icon">🎯</div>
+     <h3>Purpose-Driven Work</h3>
+     <p>Your code, content, and data directly supports @Cloud's mission of equipping Christian leaders. Your work has meaning beyond a résumé line.</p>
+   </div>
+   <div class="why-card">
+     <div class="why-icon">🌐</div>
+     <h3>Mentors, Coaches & Network</h3>
+     <p>Access to @Cloud's library of webinar recordings, training materials, and a growing network of marketplace professionals and coaches.</p>
+   </div>
+ </div>
+</section>
+ 
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+ <div class="s-label">What You'll Work On</div>
+ <h2 class="s-title">Live Projects. Real Deliverables.</h2>
+ <p class="s-sub">2–3 month mini-project terms with quarterly showcases. Small, focused teams of 2–3 interns per project.</p>
+ <div class="projects-grid">
+ 
+   <div class="project-card">
+     <div class="project-header">
+       <div class="phase-badge">Phase 1 · Data</div>
+       <h3>Data Science & Analytics</h3>
+     </div>
+     <div class="project-body">
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">BI Dashboards & Impact Reporting</div>
+           <div class="p-sub">Visualize @Cloud's ministry reach, program outcomes, and growth metrics</div>
+           <span class="mentor-tag">Lead: David · 2–3 interns</span>
+         </div>
+       </div>
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">Automated Data Pipeline (ETL/ELT)</div>
+           <div class="p-sub">Build automated workflows to collect, clean, and transform data across systems</div>
+         </div>
+       </div>
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">Centralized Database Architecture</div>
+           <div class="p-sub">Design a unified data foundation for all @Cloud ministry systems</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="project-card">
+     <div class="project-header">
+       <div class="phase-badge">Phase 1 · Media</div>
+       <h3>Media Editing & Creation</h3>
+     </div>
+     <div class="project-body">
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">Content Catalog & Archive</div>
+           <div class="p-sub">Index and digitalize existing recordings and training materials — foundation for future AI development</div>
+           <span class="mentor-tag">Team: Star · Jamie · Ray · Travis</span>
+         </div>
+       </div>
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">New Media for Digital Release</div>
+           <div class="p-sub">Create modernized content for online publishing and distribution</div>
+         </div>
+       </div>
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">Newsletter Production</div>
+           <div class="p-sub">Design and publish regular @Cloud community newsletters</div>
+         </div>
+       </div>
+       <div class="p-item">
+         <div class="p-dot"></div>
+         <div>
+           <div class="p-title">Social Media & Graphic Design</div>
+           <div class="p-sub">Future expansion area — creating social content and visual assets for @Cloud's growing digital presence</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="project-card full">
+     <div class="full-inner">
+       <div class="project-header">
+         <div class="phase-badge p2">Phase 2 · Coming Next</div>
+         <h3>Agentic AI Development</h3>
+         <p style="color:rgba(255,255,255,.45);font-size:13px;margin-top:10px;line-height:1.65;">Unlocks after Phase 1 content catalog is complete. Led by Jamie with 2–3 interns.</p>
+       </div>
+       <div class="project-body">
+         <div class="p-item">
+           <div class="p-dot gold"></div>
+           <div>
+             <div class="p-title">@Cloud AI Knowledge Chatbot</div>
+             <div class="p-sub">Build a conversational AI connected to past recordings, archives, and ministry resources — making @Cloud's knowledge accessible 24/7</div>
+             <span class="mentor-tag" style="background:rgba(201,168,76,.1);color:#9a7020;">Lead: Jamie</span>
+           </div>
+         </div>
+         <div class="p-item">
+           <div class="p-dot gold"></div>
+           <div>
+             <div class="p-title">AI Career Coach</div>
+             <div class="p-sub">Explore building a personalized AI tool to help young professionals navigate career decisions</div>
+           </div>
+         </div>
+         <div class="ai-vision">
+           <p>🚀 <strong>Long-term vision:</strong> Build an AI Avatar for EMBA mentors — so their wisdom stays accessible to future generations of students, long after each cohort ends.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+ 
+<!-- WHAT YOU GAIN -->
+<section class="gain-section">
+ <div class="gain-inner">
+   <div class="s-label">What You Walk Away With</div>
+   <h2 class="s-title">Skills That Open Doors</h2>
+   <p class="s-sub">Success isn't just about shipping the product — it's about how you grow through the process.</p>
+   <div class="gain-grid">
+     <div class="gain-card">
+       <div class="gain-icon">📁</div>
+       <h4>Portfolio Work</h4>
+       <p>Real, live projects to show in interviews — not toy examples or class assignments.</p>
+     </div>
+     <div class="gain-card">
+       <div class="gain-icon">🗣️</div>
+       <h4>Presentation Skills</h4>
+       <p>Each project term ends with a showcase where you present completed work to the @Cloud community.</p>
+     </div>
+     <div class="gain-card">
+       <div class="gain-icon">🔗</div>
+       <h4>Team & Communication</h4>
+       <p>Weekly or biweekly team cadence with structured collaboration and cross-team coordination.</p>
+     </div>
+     <div class="gain-card">
+       <div class="gain-icon">🤖</div>
+       <h4>AI Exposure</h4>
+       <p>Explore real AI trends, tools, and development — with a path into Agentic AI work in Phase 2.</p>
+     </div>
+     <div class="gain-card">
+       <div class="gain-icon">🧭</div>
+       <h4>Mentor Access</h4>
+       <p>Direct access to experienced coaches and @Cloud's full library of training materials and recordings.</p>
+     </div>
+     <div class="gain-card">
+       <div class="gain-icon">✝️</div>
+       <h4>Kingdom-Minded Community</h4>
+       <p>Be part of a community where professional growth and spiritual growth happen together.</p>
+     </div>
+   </div>
+ </div>
+</section>
+ 
+<!-- TIMELINE -->
+<section class="timeline-section">
+ <div class="s-label">Program Timeline</div>
+ <h2 class="s-title">How It Unfolds</h2>
+ <p class="s-sub">Mini project terms of 2–3 months with quarterly releases and showcases.</p>
+ <div class="timeline">
+   <div class="tl-step">
+     <div class="tl-dot"></div>
+     <div class="tl-month">Feb 2026</div>
+     <div class="tl-label">Proposal Development</div>
+     <div class="tl-desc">Mini project plans defined. Team structure and skills finalized.</div>
+   </div>
+   <div class="tl-step">
+     <div class="tl-dot"></div>
+     <div class="tl-month">Mar 2026</div>
+     <div class="tl-label">Planning & Initiation</div>
+     <div class="tl-desc">Recruiting activated. Mentors and interns matched to projects.</div>
+   </div>
+   <div class="tl-step active-tl">
+     <div class="tl-dot"></div>
+     <div class="tl-month">Apr 2026</div>
+     <div class="tl-label">Launch</div>
+     <div class="tl-desc">Program launches. First cohort onboarding begins.</div>
+   </div>
+   <div class="tl-step">
+     <div class="tl-dot"></div>
+     <div class="tl-month">May 2026</div>
+     <div class="tl-label">Implementation</div>
+     <div class="tl-desc">Teams actively working on Phase 1 data and media projects.</div>
+   </div>
+   <div class="tl-step">
+     <div class="tl-dot"></div>
+     <div class="tl-month">Jun 2026</div>
+     <div class="tl-label">Showcase</div>
+     <div class="tl-desc">First quarterly showcase. Teams present to the @Cloud community.</div>
+   </div>
+ </div>
+</section>
+ 
+<!-- MENTORS -->
+<section class="mentors-section">
+ <div class="s-label">Who You'll Learn From</div>
+ <h2 class="s-title">Your Mentor Team</h2>
+ <p class="s-sub">Each project is guided by an experienced mentor who brings professional expertise and Kingdom perspective.</p>
+ <div class="mentors-grid">
+   <div class="mentor-card">
+     <div class="m-avatar">J</div>
+     <div class="m-role">Project Manager · AI Lead</div>
+     <h4>Jamie</h4>
+     <p>Leads Agentic AI track and organizes weekly/biweekly team cadence. 2–3 interns per project.</p>
+   </div>
+   <div class="mentor-card">
+     <div class="m-avatar">D</div>
+     <div class="m-role">Data Lead</div>
+     <h4>David</h4>
+     <p>Guides data science and analytics projects. 2–3 interns on BI dashboards and data pipelines.</p>
+   </div>
+   <div class="mentor-card">
+     <div class="m-avatar">R</div>
+     <div class="m-role">Media & Tech</div>
+     <h4>Ray</h4>
+     <p>Supports media creation and technical infrastructure work alongside the broader media team.</p>
+   </div>
+ </div>
+</section>
+ 
+<!-- PATHWAY -->
+<section class="pathway-section">
+ <div class="s-label">Your Growth Path</div>
+ <h2 class="s-title">NextGen is Just the Beginning</h2>
+ <p class="s-sub">@Cloud NextGen is the entry point into the @Cloud ecosystem — a "Bachelors" program that prepares you for deeper growth through EMBA and beyond.</p>
+ 
+ <div class="pathway-row">
+   <div class="path-step highlight">
+     <div class="path-level">You are here</div>
+     <div class="path-name">@Cloud NextGen</div>
+     <div class="path-degree bachelor">🎓 "Bachelors"</div>
+     <div class="path-desc">New college grads & young professionals. Build skills, portfolio, and faith-work foundations.</div>
+   </div>
+   <div class="path-arrow">→</div>
+   <div class="path-step">
+     <div class="path-level">Next level</div>
+     <div class="path-name">@Cloud EMBA</div>
+     <div class="path-degree masters">"Masters"</div>
+     <div class="path-desc">Mid-career professionals. EMBA Mentorship program for marketplace leaders.</div>
+   </div>
+   <div class="path-arrow">→</div>
+   <div class="path-step">
+     <div class="path-level">Advanced</div>
+     <div class="path-name">@Cloud MCIP</div>
+     <div class="path-degree phd">"PhD"</div>
+     <div class="path-desc">Marketplace Church Incubation Program. Equipping workplace fellowship leaders.</div>
+   </div>
+ </div>
+ 
+ <div class="path-synergy">
+   <h4>🔗 How NextGen Connects to the Bigger Picture</h4>
+   <div class="synergy-list">
+     <div class="syn-item">NextGen builds the mentee pipeline for the EMBA program</div>
+     <div class="syn-item">Gives EMBA Mentees a platform to practice their mentorship skills</div>
+     <div class="syn-item">NextGen graduates become the next generation of EMBA mentors</div>
+     <div class="syn-item">EMBA identifies potential Mentees to become future Mentors</div>
+   </div>
+ </div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta-section" id="apply">
+ <div class="cta-inner">
+   <div class="s-label">Ready to Build?</div>
+   <h2 class="s-title">Apply for the Internship Track</h2>
+   <p class="s-sub">Volunteer positions open to recent grads in software engineering, data science, analytics, and media. Small cohorts of 2–3 per project. Primarily filled through referrals and local networks.</p>
+   <a href="https://at-cloud.biz/?fbclid=IwY2xjawQoSgFleHRuA2FlbQIxMABicmlkETFrVXA3VmpaZEwwRjA4Vnp4c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsbACUjZ58GesAr2mQImMK-B7J0-vkPt2esAk9OEj3hgYKYEoMIOhh1a0dAA_aem_ah1d9o0ueaFLhNyAsJYnZA" class="btn-primary" style="font-size:15px;padding:17px 42px;">Register Your Interest</a>
+   <p class="cta-note">New to @Cloud? You'll need a free ERP account first. <a href="https://at-cloud.biz/?fbclid=IwY2xjawQoSgFleHRuA2FlbQIxMABicmlkETFrVXA3VmpaZEwwRjA4Vnp4c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsbACUjZ58GesAr2mQImMK-B7J0-vkPt2esAk9OEj3hgYKYEoMIOhh1a0dAA_aem_ah1d9o0ueaFLhNyAsJYnZA">Create one here →</a></p>
+ </div>
+</section>
+ 
+<footer>
+ <p>© 2026 @Cloud Marketplace Ministry · NextGen Internship Track</p>
+ <p style="color:rgba(255,255,255,.18);font-size:13px;">at-cloud.biz</p>
+</footer>
+</body>
+</html>

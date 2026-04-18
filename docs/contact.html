@@ -3,89 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EMBA Program — At Cloud</title>
-  <meta name="description" content="Welcome to the Cloud EMBA Mentor Circle — a mentorship initiative by @Cloud Marketplace Ministry.">
+  <title>Contact — At Cloud</title>
+  <meta name="description" content="Contact @Cloud Marketplace Ministry.">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <style>
-    .emba-hero {
-      position: relative;
-      color: #fff;
-      padding: 7rem 0 6rem;
-      text-align: center;
-      background-color: #0e1018;
-      background-image: url("assets/images/banner-life-2.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .emba-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: #000;
-      opacity: 0.5;
-      pointer-events: none;
-    }
-    .emba-hero .container {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-    }
-    .emba-hero .eyebrow {
-      font-family: "Roboto", var(--font-body);
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0 0 1rem;
-    }
-    .emba-hero h1 {
-      font-family: "Roboto", var(--font-body);
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin: 0 0 1.5rem;
-      color: #fff;
-    }
-    .emba-hero p.lede {
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      line-height: 1.7;
-      margin: 0 auto 2.25rem;
-      max-width: 680px;
-      color: rgba(255, 255, 255, 0.95);
-    }
-    .emba-hero .register-btn {
-      display: inline-block;
-      background: #283ad6;
-      color: #fff;
-      font-family: "Roboto", var(--font-body);
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      font-weight: 500;
-      padding: 0.85em 1.75em;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .emba-hero .register-btn:hover {
-      background: #1b2cb3;
-      transform: translateY(-2px);
-    }
-    .emba-hero .note {
-      margin: 1.75rem auto 0;
-      max-width: 560px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #c00;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/pages.css">
 </head>
 <body>
   <header class="site-header">
@@ -107,7 +34,15 @@
               <li><a href="mentors.html">Mentors</a></li>
             </ul>
           </li>
-          <li><a href="emba.html" aria-current="page">EMBA Program</a></li>
+          <li class="nav-item--dropdown">
+            <a href="emba.html" class="nav-parent">EMBA Program <span class="nav-chevron" aria-hidden="true"></span></a>
+            <ul class="nav-sub" role="list">
+              <li><a href="emba.html">Overview</a></li>
+              <li><a href="programs/emba-mentor-circles-2026.html">EMBA Mentor Circles (2026)</a></li>
+              <li><a href="programs/nextgen-coaching.html">NextGen — Coaching</a></li>
+              <li><a href="programs/nextgen-internship.html">NextGen — Internship</a></li>
+            </ul>
+          </li>
           <li><a href="events.html">Events</a></li>
           <li class="nav-cta"><a href="donation.html">Donation</a></li>
         </ul>
@@ -115,16 +50,80 @@
     </div>
   </header>
 
-  <main class="site-main">
-    <section class="emba-hero">
-      <div class="container">
-        <p class="eyebrow">Empowering Your Journey</p>
-        <h1>Welcome to the Cloud EMBA Mentor Circle</h1>
-        <p class="lede">A mentorship initiative by Cloud Marketplace Ministry designed to equip business leaders and entrepreneurs to create lasting change in the marketplace while honoring God.</p>
-        <p><a class="register-btn" href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs" target="_blank" rel="noopener noreferrer">Register for EMBA Programs</a></p>
-        <p class="note">If you’re new to @Cloud or have not already created an account in our ERP system, please take a few minutes first to sign up for an account.</p>
+  <main class="page-scoped page-contact">
+    <div class="contact-container">
+      <div class="page-header">
+        <h1>Contact</h1>
+        <p>We'd love to hear from you. Reach out and we will get back to you as soon as possible.</p>
       </div>
-    </section>
+
+      <div class="contact-grid">
+
+        <section class="contact-card">
+          <h2 class="contact-heading">YOU'RE MY EVERYTHING</h2>
+          <p class="contact-sub">I'm not sure about it, but I'm glad to have you around.</p>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9742;</div>
+            <div class="contact-info-text">
+              <h3>Phone</h3>
+              <p><a href="tel:1-408-320-5526">1-408-320-5526</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9993;</div>
+            <div class="contact-info-text">
+              <h3>Email</h3>
+              <p><a href="mailto:operationatcloud@gmail.com">operationatcloud@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">&#9873;</div>
+            <div class="contact-info-text">
+              <h3>Address</h3>
+              <p>2586 Seaboard Ave, San Jose, California 95131</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-card">
+          <h2 class="contact-heading">SAY OH YEAH!</h2>
+          <p class="contact-sub">Your email address will not be published. Required fields are marked.</p>
+
+          <form class="contact-form" data-contact-form action="mailto:operationatcloud@gmail.com" method="post" enctype="text/plain" novalidate>
+            <div class="field">
+              <label for="contact-name">Your name</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="contact-email">Your email</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" required>
+            </div>
+            <div class="field">
+              <label for="contact-message">Your message (optional)</label>
+              <textarea id="contact-message" name="message" rows="6"></textarea>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=2586%20Seaboard%20Ave%20San%20Jose%2C%20California%2095131&t=m&z=12&output=embed&iwloc=near"
+        title="2586 Seaboard Ave San Jose, California 95131"
+        aria-label="2586 Seaboard Ave San Jose, California 95131"
+        loading="lazy"
+      ></iframe>
+    </div>
   </main>
 
   <footer class="site-footer">
