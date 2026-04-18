@@ -1,0 +1,7 @@
+# At Cloud — static site (GitHub Pages /docs).
+# If your public URL is not https://at-cloud.biz, update the Sitemap line to match.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://at-cloud.biz/sitemap.xml
