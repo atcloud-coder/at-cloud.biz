@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
 <title>@Cloud NextGen — Coaching Track</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy:   #0A1628;
@@ -31,27 +31,30 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:66px;padding:0 6%;display
 .logo-text{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff;}
 .logo-text em{font-style:normal;color:var(--gold);}
 .nav-tag{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);border-bottom:2px solid var(--gold);padding-bottom:2px;}
-.nav-apply{background:var(--gold);color:var(--navy);padding:10px 22px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s;font-family:'Syne',sans-serif;}
+.nav-apply{display:inline-grid;place-items:center;background:var(--gold);color:var(--navy);min-height:2.5rem;padding:0 22px;border-radius:7px;font-size:13px;font-weight:700;line-height:1.2;text-decoration:none;transition:all .2s;font-family:'DM Sans','Syne',sans-serif;-webkit-font-smoothing:antialiased;}
 .nav-apply:hover{background:var(--gold-lt);transform:translateY(-1px);}
+.nav-apply--soon{max-width:min(200px,42vw);min-height:auto;padding:8px 14px;font-size:11px;line-height:1.25;opacity:0.92;cursor:default;pointer-events:none;overflow:visible;}
 .nav-end{display:flex;align-items:center;gap:18px;}
 .nav-main-site{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.45);text-decoration:none;}
 .nav-main-site:hover{color:rgba(255,255,255,.88);}
 
 /* ── HERO ── */
-.hero{min-height:100vh;padding-top:66px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero{min-height:100vh;padding-top:66px;background:var(--navy);position:relative;overflow-x:hidden;overflow-y:visible;display:flex;align-items:center;}
 .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 82% 50%,rgba(201,168,76,.2) 0%,transparent 55%),radial-gradient(ellipse 45% 50% at 8% 80%,rgba(26,111,191,.13) 0%,transparent 50%);}
 .hero-texture{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;}
-.hero-content{position:relative;z-index:2;padding:0 6%;max-width:800px;animation:fadeUp .8s ease both;}
+.hero-content{position:relative;z-index:2;padding:0 6%;max-width:800px;animation:fadeUp .8s ease both;overflow:visible;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:100px;padding:6px 16px;margin-bottom:24px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;}
 .hero-eyebrow::before{content:'✦';font-size:9px;}
 .degree-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:7px 16px;margin-bottom:20px;font-size:13px;font-weight:600;color:var(--gold);}
 h1{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,78px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:22px;}
 h1 em{font-style:italic;color:var(--gold);}
 .hero-desc{font-size:18px;color:rgba(255,255,255,.52);line-height:1.78;max-width:580px;margin-bottom:40px;}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px;}
-.btn-primary{background:var(--gold);color:var(--navy);padding:16px 34px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .22s;display:inline-block;font-family:'Syne',sans-serif;}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:50px;}
+.btn-primary{background:var(--gold);color:var(--navy);border-radius:8px;font-size:14px;font-weight:700;line-height:1.2;text-decoration:none;border:none;cursor:pointer;transition:all .22s;display:inline-grid;place-items:center;min-height:3rem;padding:0 34px;font-family:'DM Sans','Syne',sans-serif;overflow:visible;-webkit-font-smoothing:antialiased;}
 .btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.4);}
-.btn-outline{background:transparent;color:#fff;padding:16px 34px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid rgba(255,255,255,.22);cursor:pointer;transition:all .22s;display:inline-block;}
+.btn-primary--soon{opacity:0.92;cursor:default;pointer-events:none;}
+.btn-primary--soon:hover{background:var(--gold);transform:none;box-shadow:none;}
+.btn-outline{background:transparent;color:#fff;border-radius:8px;font-size:14px;font-weight:500;line-height:1.2;text-decoration:none;border:1.5px solid rgba(255,255,255,.22);cursor:pointer;transition:all .22s;display:inline-grid;place-items:center;min-height:3rem;padding:0 34px;box-sizing:border-box;}
 .btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
 .hero-pills{display:flex;flex-wrap:wrap;gap:10px;}
 .pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,.5);}
@@ -176,9 +179,10 @@ section{padding:88px 6%;}
 .no-list li::before{content:'✕';color:var(--muted);flex-shrink:0;}
 
 /* ── CTA ── */
-.cta-section{background:var(--cream);text-align:center;padding:100px 6%;position:relative;overflow:hidden;}
+.cta-section{background:var(--cream);text-align:center;padding:100px 6%;position:relative;overflow-x:hidden;overflow-y:visible;}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(201,168,76,.12) 0%,transparent 60%);}
-.cta-inner{position:relative;z-index:2;}
+.cta-inner{position:relative;z-index:2;overflow:visible;}
+.btn-primary--cta-soon{font-size:15px;min-height:3.35rem;padding:0 42px;line-height:1.2;}
 .cta-section .s-label{color:var(--gold2);}
 .cta-section .s-title{margin:0 auto 14px;}
 .cta-section .s-sub{margin:0 auto 40px;text-align:center;}
@@ -202,7 +206,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.25);}
   <div class="nav-tag">Coaching Track</div>
   <div class="nav-end">
     <a href="../index.html" class="nav-main-site">Main site</a>
-    <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df?page=1&amp;sort=asc" class="nav-apply" target="_blank" rel="noopener noreferrer">Apply Now</a>
+    <span class="nav-apply nav-apply--soon" role="status">Registration Opens Soon</span>
   </div>
 </nav>
 
@@ -216,7 +220,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.25);}
     <h1>Grow Into Who<br>You're <em>Called</em> to Be.</h1>
     <p class="hero-desc">The workplace is changing fast. AI is reshaping careers. And many young professionals are asking deeper questions about identity, purpose, and calling — beyond just their résumé. @Cloud NextGen Coaching is built for exactly that moment.</p>
     <div class="hero-ctas">
-      <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df?page=1&amp;sort=asc" class="btn-primary" target="_blank" rel="noopener noreferrer">Apply Now</a>
+      <span class="btn-primary btn-primary--soon" role="status">Registration Opens Soon</span>
       <a href="#curriculum" class="btn-outline">See the Curriculum</a>
     </div>
     <div class="hero-pills">
@@ -586,8 +590,8 @@ footer p{font-size:13px;color:rgba(255,255,255,.25);}
     <div class="s-label">Ready to Grow?</div>
     <h2 class="s-title">Apply for the Coaching Track</h2>
     <p class="s-sub">Program launches May 2026. Cohorts are kept small so every participant gets genuine attention from their coach and mentor.</p>
-    <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df?page=1&amp;sort=asc" class="btn-primary" style="font-size:15px;padding:17px 42px;" target="_blank" rel="noopener noreferrer">Register Your Interest</a>
-    <p class="cta-note">New to @Cloud? You'll need a free ERP account first. <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df?page=1&amp;sort=asc" target="_blank" rel="noopener noreferrer">Create one here →</a></p>
+    <span class="btn-primary btn-primary--soon btn-primary--cta-soon" role="status">Registration Opens Soon</span>
+    <p class="cta-note">When registration opens, you will be able to sign up here. New participants will need a free @Cloud account.</p>
   </div>
 </section>
 
