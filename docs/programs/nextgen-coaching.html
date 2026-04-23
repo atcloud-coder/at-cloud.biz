@@ -129,6 +129,8 @@ section{padding:88px 6%;}
 .curr-table tr:last-child td{border-bottom:none;}
 .curr-table tr:hover td{background:var(--cream);}
 .curr-table tr.total-row td{background:var(--off);font-weight:600;}
+.table-x{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.table-x .curr-table{min-width:560px;}
 .cat-icon{font-size:20px;margin-bottom:6px;}
 .cat-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--navy);}
 .topic-tag{display:inline-block;background:rgba(26,111,191,.08);color:var(--blue);font-size:11px;padding:2px 8px;border-radius:4px;margin:2px 2px 2px 0;}
@@ -193,6 +195,42 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 footer p{font-size:13px;color:rgba(255,255,255,.25);}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+img,video{max-width:100%;height:auto;}
+
+@media (max-width:1024px){
+  .format-grid{grid-template-columns:1fr;gap:32px;}
+  .network-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:768px){
+  nav{flex-wrap:wrap;height:auto;min-height:66px;padding:12px 5%;row-gap:12px;align-items:center;}
+  .nav-end{flex-wrap:wrap;gap:12px;min-width:0;}
+  .pain-grid{grid-template-columns:1fr;}
+  .q-list{grid-template-columns:1fr;}
+  .network-grid{grid-template-columns:1fr;}
+  .mentors-grid{grid-template-columns:1fr;}
+  .audience-grid{grid-template-columns:1fr;}
+  section{padding:64px 5%;}
+  .why-now,.network-section{padding:64px 5%;}
+  .pathway-row{flex-direction:column;align-items:stretch;gap:0;}
+  .path-step{flex:none;width:100%;min-width:0;}
+  .path-arrow{transform:rotate(90deg);padding:8px 0;line-height:1;align-self:center;}
+  .synergy-list{grid-template-columns:1fr;}
+  footer{flex-wrap:wrap;gap:12px;justify-content:flex-start;}
+  .curr-table th,.curr-table td{padding:12px 14px;font-size:13px;}
+  .mentor-card{flex-direction:column;align-items:flex-start;}
+}
+
+@media (max-width:600px){
+  nav{padding:12px 16px;flex-direction:column;align-items:stretch;}
+  .nav-tag{align-self:flex-start;}
+  .nav-end{justify-content:space-between;width:100%;}
+  section,.why-now,.network-section{padding:56px 16px;}
+  .hero-content{padding:0 16px;}
+  .cta-section{padding:72px 16px;}
+  .btn-primary,.btn-outline{max-width:100%;box-sizing:border-box;}
+}
 </style>
 </head>
 <body>
@@ -329,6 +367,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.25);}
   <div class="s-label">What You'll Learn</div>
   <h2 class="s-title">The Curriculum</h2>
   <p class="s-sub">Five core categories. 24 total sessions. Every topic chosen to help you grow as a professional, a leader, and a person of faith.</p>
+  <div class="table-x">
   <table class="curr-table">
     <thead>
       <tr>
@@ -376,6 +415,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.25);}
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 <!-- NETWORKING & COMMUNITY -->
