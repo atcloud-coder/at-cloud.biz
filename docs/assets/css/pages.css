@@ -1090,6 +1090,7 @@
   border: none;
   cursor: pointer;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .page-scoped .paypal-button:hover {
@@ -1116,6 +1117,14 @@
   }
   .page-scoped .donation-methods {
     grid-template-columns: 1fr;
+  }
+
+  .page-scoped .paypal-button {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
 

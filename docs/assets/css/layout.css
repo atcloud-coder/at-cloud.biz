@@ -132,6 +132,7 @@
   color: #fff !important;
   padding: 0.35rem 0.75rem;
   border-radius: 4px;
+  text-align: center;
 }
 
 .nav-list .nav-cta a:hover {
@@ -255,6 +256,17 @@
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--color-bg-alt);
     font-size: 14px;
+  }
+
+  /* CTA: beat .site-nav .nav-list > li > a padding (0.75rem 0) and center label in full-width bar */
+  .site-nav .nav-list > li.nav-cta > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.65rem 1rem;
   }
 }
 
