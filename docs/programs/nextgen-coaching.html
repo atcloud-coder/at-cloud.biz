@@ -122,6 +122,18 @@ section{padding:88px 6%;}
 
 /* ── CURRICULUM ── */
 .curriculum-section{background:var(--white);}
+.terms-table-wrap{margin-bottom:36px;}
+.terms-table-wrap h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.terms-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.terms-table th{background:var(--navy);padding:13px 20px;text-align:left;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.terms-table th:first-child{color:var(--gold);}
+.terms-table td{padding:15px 20px;border-bottom:1px solid var(--border);font-size:14px;color:var(--navy);vertical-align:middle;}
+.terms-table tr:last-child td{border-bottom:none;}
+.terms-table tr:hover td{background:var(--cream);}
+.terms-table tr.terms-annual td{background:var(--off);}
+.term-badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold2);font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;}
+.term-badge.annual{background:rgba(26,111,191,.1);color:var(--blue);}
+.term-savings{font-size:11px;color:var(--blue);font-weight:600;margin-left:6px;}
 .curr-table{width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
 .curr-table th{background:var(--navy);padding:15px 22px;text-align:left;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);}
 .curr-table th:first-child{color:var(--gold);}
@@ -244,7 +256,7 @@ img,video{max-width:100%;height:auto;}
   <div class="nav-tag">Coaching Track</div>
   <div class="nav-end">
     <a href="../index.html" class="nav-main-site">Main site</a>
-    <span class="nav-apply nav-apply--soon" role="status">Registration Opens Soon</span>
+    <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df" class="nav-apply" target="_blank" rel="noopener">Enroll Now</a>
   </div>
 </nav>
 
@@ -258,13 +270,13 @@ img,video{max-width:100%;height:auto;}
     <h1>Grow Into Who<br>You're <em>Called</em> to Be.</h1>
     <p class="hero-desc">The workplace is changing fast. AI is reshaping careers. And many young professionals are asking deeper questions about identity, purpose, and calling — beyond just their résumé. @Cloud NextGen Coaching is built for exactly that moment.</p>
     <div class="hero-ctas">
-      <span class="btn-primary btn-primary--soon" role="status">Registration Opens Soon</span>
+      <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df" class="btn-primary" target="_blank" rel="noopener">Enroll Now</a>
       <a href="#curriculum" class="btn-outline">See the Curriculum</a>
     </div>
     <div class="hero-pills">
       <span class="pill"><strong>Group Sessions</strong> + 1-on-1 Mentorship</span>
       <span class="pill"><strong>24 sessions</strong> · 5 categories</span>
-      <span class="pill"><strong>Launch:</strong> May 2026</span>
+      <span class="pill"><strong>Launch:</strong> June 2026</span>
       <span class="pill"><strong>Coaches:</strong> Lili · Allen · Sam · Saurin · Jonathan</span>
     </div>
   </div>
@@ -367,6 +379,51 @@ img,video{max-width:100%;height:auto;}
   <div class="s-label">What You'll Learn</div>
   <h2 class="s-title">The Curriculum</h2>
   <p class="s-sub">Five core categories. 24 total sessions. Every topic chosen to help you grow as a professional, a leader, and a person of faith.</p>
+  <!-- PROGRAM TERMS OVERVIEW TABLE -->
+  <div class="terms-table-wrap">
+    <h3>Program Terms &amp; Tuition</h3>
+    <table class="terms-table">
+      <thead>
+        <tr>
+          <th>Term</th>
+          <th>Theme</th>
+          <th>Duration</th>
+          <th>Dates</th>
+          <th>Tuition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="term-badge">Term 1</span></td>
+          <td>Quick Start Guide for Your Career</td>
+          <td>~100 days</td>
+          <td>June 2026</td>
+          <td><strong>$50</strong></td>
+        </tr>
+        <tr>
+          <td><span class="term-badge">Term 2</span></td>
+          <td>TBD</td>
+          <td>~100 days</td>
+          <td>~Oct 2026 <span style="font-size:12px;color:var(--muted);">(1-mo break after Term 1)</span></td>
+          <td><strong>$50</strong></td>
+        </tr>
+        <tr>
+          <td><span class="term-badge">Term 3</span></td>
+          <td>TBD</td>
+          <td>~100 days</td>
+          <td>~Feb 2027 <span style="font-size:12px;color:var(--muted);">(1-mo break after Term 2)</span></td>
+          <td><strong>$50</strong></td>
+        </tr>
+        <tr class="terms-annual">
+          <td><span class="term-badge annual">Annual Membership</span></td>
+          <td colspan="2" style="color:var(--muted);font-size:13px;">Covers all 3 terms · 3 terms per year</td>
+          <td>Full year</td>
+          <td><strong>$120</strong> <span class="term-savings">Save 20%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="table-x">
   <table class="curr-table">
     <thead>
@@ -629,9 +686,9 @@ img,video{max-width:100%;height:auto;}
   <div class="cta-inner">
     <div class="s-label">Ready to Grow?</div>
     <h2 class="s-title">Apply for the Coaching Track</h2>
-    <p class="s-sub">Program launches May 2026. Cohorts are kept small so every participant gets genuine attention from their coach and mentor.</p>
-    <span class="btn-primary btn-primary--soon btn-primary--cta-soon" role="status">Registration Opens Soon</span>
-    <p class="cta-note">When registration opens, you will be able to sign up here. New participants will need a free @Cloud account.</p>
+    <p class="s-sub">Program launches June 2026. Cohorts are kept small so every participant gets genuine attention from their coach and mentor.</p>
+    <a href="https://at-cloud-sign-up-system.onrender.com/dashboard/programs/69e04e4c75a0e9fa528b30df" class="btn-primary btn-primary--cta-soon" target="_blank" rel="noopener">Enroll Now</a>
+    <p class="cta-note">New participants will need a free @Cloud account to complete enrollment.</p>
   </div>
 </section>
 
